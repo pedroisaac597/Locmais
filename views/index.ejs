@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Locmais Andaimes: locacao de andaimes, escoramentos e solucoes de acesso para obras com seguranca."
+    />
+    <title>Locmais Andaimes | Locacao para obras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navegacao principal">
+        <a class="brand" href="#inicio" aria-label="Locmais Andaimes">
+          <span class="brand-mark">L+</span>
+          <span>
+            <strong>Locmais</strong>
+            <small>Andaimes & Obras</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Abrir menu</span>
+        </button>
+
+        <ul id="main-menu" class="nav-links">
+          <li><a href="#servicos">Servicos</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#blog">Blog e opinioes</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <% if (message) { %>
+        <div class="toast toast-success" role="status">
+          <%= message === "video-publicado" ? "Video publicado com sucesso." : "Opiniao publicada com sucesso." %>
+        </div>
+      <% } %>
+
+      <% if (error) { %>
+        <div class="toast toast-error" role="alert"><%= error %></div>
+      <% } %>
+
+      <section id="inicio" class="hero section">
+        <div class="hero-content">
+          <p class="eyebrow">Locacao de andaimes com seguranca</p>
+          <h1>Estrutura confiavel para sua obra chegar mais alto.</h1>
+          <p class="hero-text">
+            Aluguel de andaimes, escoramentos e acessorios para obras residenciais,
+            comerciais e industriais. Atendimento rapido, orientacao tecnica e equipamentos
+            revisados para cada projeto.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Solicitar orcamento</a>
+            <a class="btn btn-secondary" href="#videos">Ver videos</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Destaques da Locmais">
+          <div class="metric">
+            <strong>24h</strong>
+            <span>resposta para orcamento</span>
+          </div>
+          <div class="metric">
+            <strong>100%</strong>
+            <span>equipamentos revisados</span>
+          </div>
+          <div class="metric">
+            <strong>NR-18</strong>
+            <span>foco em seguranca</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Diferenciais">
+        <span>Entrega programada</span>
+        <span>Montagem orientada</span>
+        <span>Atendimento para empresas</span>
+        <span>Obras pequenas e grandes</span>
+      </section>
+
+      <section id="servicos" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Solucoes para construcao</p>
+          <h2>Andaimes e suporte para cada etapa da obra</h2>
+          <p>
+            Conte com equipamentos resistentes, equipe preparada e contratos flexiveis para
+            locacoes por periodo curto, medio ou longo.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="card-icon">01</span>
+            <h3>Andaimes fachadeiros</h3>
+            <p>
+              Ideais para pintura, manutencao predial, revestimentos e servicos em fachadas
+              com melhor acesso e produtividade.
+            </p>
+          </article>
+          <article class="service-card">
+            <span class="card-icon">02</span>
+            <h3>Andaimes tubulares</h3>
+            <p>
+              Versateis para reformas e obras de diferentes portes, com montagem adaptavel ao
+              espaco disponivel.
+            </p>
+          </article>
+          <article class="service-card">
+            <span class="card-icon">03</span>
+            <h3>Escoramentos e acessorios</h3>
+            <p>
+              Pecas complementares para dar estabilidade, acesso e seguranca durante a execucao
+              do servico.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section highlight">
+        <div>
+          <p class="eyebrow">Por que escolher a Locmais?</p>
+          <h2>Equipamentos revisados e atendimento proximo do canteiro.</h2>
+        </div>
+        <ul class="check-list">
+          <li>Planejamento da locacao conforme altura, prazo e tipo de servico.</li>
+          <li>Orientacao de uso para aumentar seguranca e produtividade.</li>
+          <li>Entrega e retirada combinadas para reduzir atrasos na obra.</li>
+          <li>Contratos simples para construtoras, condominios e profissionais autonomos.</li>
+        </ul>
+      </section>
+
+      <section id="videos" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Area dinamica de videos</p>
+          <h2>Cadastre videos da empresa, obras e depoimentos</h2>
+          <p>
+            O formulario abaixo envia os dados para o servidor e salva os videos no arquivo
+            <strong>data/content.json</strong>. Cole links do YouTube para exibir os videos no site.
+          </p>
+        </div>
+
+        <div class="content-layout">
+          <form class="panel form-panel" action="/videos" method="post">
+            <h3>Novo video</h3>
+            <label for="video-title">Titulo do video</label>
+            <input id="video-title" name="title" type="text" placeholder="Ex.: Montagem de andaime fachadeiro" required />
+
+            <label for="video-url">Link do YouTube</label>
+            <input id="video-url" name="url" type="url" placeholder="https://www.youtube.com/watch?v=..." required />
+
+            <label for="video-description">Descricao curta</label>
+            <textarea
+              id="video-description"
+              name="description"
+              rows="4"
+              placeholder="Conte o que aparece no video"
+              required
+            ></textarea>
+
+            <button class="btn btn-primary" type="submit">Postar video</button>
+          </form>
+
+          <div class="video-grid">
+            <% videos.forEach((video) => { %>
+              <article class="video-card">
+                <div class="video-frame">
+                  <iframe
+                    src="<%= video.embedUrl %>"
+                    title="<%= video.title %>"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="video-body">
+                  <p class="date"><%= new Date(video.createdAt).toLocaleDateString("pt-BR") %></p>
+                  <h3><%= video.title %></h3>
+                  <p><%= video.description %></p>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section blog-section">
+        <div class="section-heading">
+          <p class="eyebrow">Blog e opinioes</p>
+          <h2>Depoimentos de clientes e novidades da Locmais</h2>
+          <p>
+            Clientes e equipe podem publicar opinioes, novidades e dicas. Cada postagem e
+            gravada pelo backend e aparece automaticamente no topo da lista.
+          </p>
+        </div>
+
+        <div class="content-layout reverse">
+          <div class="post-list">
+            <% posts.forEach((post) => { %>
+              <article class="post-card">
+                <p class="date"><%= new Date(post.createdAt).toLocaleDateString("pt-BR") %></p>
+                <h3><%= post.title %></h3>
+                <p><%= post.content %></p>
+                <strong><%= post.author %></strong>
+              </article>
+            <% }) %>
+          </div>
+
+          <form class="panel form-panel" action="/opinioes" method="post">
+            <h3>Nova postagem</h3>
+            <label for="post-author">Nome do cliente ou autor</label>
+            <input id="post-author" name="author" type="text" placeholder="Ex.: Mariana Souza" required />
+
+            <label for="post-title">Titulo</label>
+            <input id="post-title" name="title" type="text" placeholder="Ex.: Atendimento agil para nossa obra" required />
+
+            <label for="post-content">Opiniao ou noticia</label>
+            <textarea
+              id="post-content"
+              name="content"
+              rows="5"
+              placeholder="Escreva o depoimento, dica ou novidade"
+              required
+            ></textarea>
+
+            <button class="btn btn-primary" type="submit">Publicar opiniao</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="contato" class="section contact-section">
+        <div class="contact-card">
+          <p class="eyebrow">Fale com a equipe</p>
+          <h2>Peca seu orcamento de locacao</h2>
+          <p>
+            Informe o tipo de obra, altura aproximada, endereco e prazo desejado para receber
+            uma proposta sob medida.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="tel:+550000000000">(00) 00000-0000</a>
+            <a class="btn btn-secondary" href="mailto:contato@locmaisandaimes.com.br">Enviar e-mail</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <%= currentYear %> Locmais Andaimes. Locacao de andaimes para construcao civil.</p>
+      <a href="#inicio">Voltar ao topo</a>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
