@@ -1,0 +1,26 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "Site dinamico para locacao de andaimes e postagem de videos/opinioes.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --check server.js && node --check src/storage.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedroisaac597/Locmais.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedroisaac597/Locmais/issues"
+  },
+  "homepage": "https://github.com/pedroisaac597/Locmais#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  }
+}

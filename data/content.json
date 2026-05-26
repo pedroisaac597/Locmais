@@ -1,0 +1,28 @@
+{
+  "videos": [
+    {
+      "id": "video-1",
+      "title": "Como escolher o andaime ideal para sua obra",
+      "description": "Veja os principais pontos para definir altura, acesso e quantidade de equipamentos.",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "post-1",
+      "author": "Carlos Menezes",
+      "title": "Entrega rapida e material em bom estado",
+      "content": "Contratamos andaimes para uma reforma comercial e recebemos tudo revisado, com orientacao clara para a equipe.",
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "post-2",
+      "author": "Mariana Souza",
+      "title": "A locacao ajudou no prazo da pintura",
+      "content": "A estrutura facilitou o acesso a fachada e a retirada foi combinada sem atrapalhar a rotina do condominio.",
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  ]
+}
