@@ -155,15 +155,19 @@ button, input, textarea, select {
 }
 
 .logo-img {
-  height: 64px;
+  height: auto;
+  max-height: 70px;
   width: auto;
-  max-width: 240px;
+  max-width: 165px;
   object-fit: contain;
   display: block;
 }
 
 .logo-img-footer {
-  height: 68px;
+  max-height: 80px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
 }
 
 .nav {
@@ -464,38 +468,39 @@ main {
   padding: 80px 0;
 }
 
-/* Servicos ù logo marca d'agua */
+/* Servicos ù logo marca d'agua no fundo */
 .section-servicos {
   position: relative;
   overflow: hidden;
-  background: var(--white);
+  background: linear-gradient(
+    160deg,
+    var(--gray-100) 0%,
+    var(--white) 40%,
+    rgba(114, 47, 55, 0.03) 50%,
+    var(--white) 60%,
+    var(--gray-100) 100%
+  );
 }
 
-.section-servicos::before {
-  content: '';
-  position: absolute;
-  inset: -10% 0;
-  background: url('../assets/logo.png') no-repeat center center;
-  background-size: clamp(260px, 50vw, 480px);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-  filter: grayscale(20%);
-}
-
-.section-servicos::after {
-  content: '';
+.servicos-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(255, 255, 255, 0.97) 0%,
-    rgba(255, 255, 255, 0.88) 42%,
-    rgba(245, 245, 245, 0.75) 58%,
-    rgba(255, 255, 255, 0.92) 100%
-  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   z-index: 0;
+}
+
+.servicos-bg img {
+  width: auto;
+  height: auto;
+  max-width: min(92%, 560px);
+  max-height: min(75vh, 640px);
+  opacity: 0.1;
+  object-fit: contain;
+  filter: grayscale(10%);
+  user-select: none;
 }
 
 .section-servicos .container {
@@ -504,7 +509,9 @@ main {
 }
 
 .section-servicos .card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(114, 47, 55, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .section-header {
@@ -1660,12 +1667,15 @@ main {
   }
 
   .logo-img {
-    height: 48px;
-    max-width: 170px;
+    max-height: 52px;
+    max-width: 130px;
+    height: auto;
   }
 
   .logo-img-footer {
-    height: 56px;
+    max-height: 64px;
+    max-width: 150px;
+    height: auto;
   }
 
   .hero {
@@ -1869,8 +1879,9 @@ main {
   }
 
   .logo-img {
-    height: 42px;
-    max-width: 150px;
+    max-height: 46px;
+    max-width: 115px;
+    height: auto;
   }
 
   .top-bar-link span,
