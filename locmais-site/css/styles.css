@@ -131,8 +131,7 @@ button, input, textarea, select {
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
+  background: var(--white);
   border-bottom: 1px solid var(--gray-200);
   z-index: 1000;
   transition: box-shadow var(--transition);
@@ -202,11 +201,45 @@ button, input, textarea, select {
 .nav-toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
+  margin: -12px;
+  min-width: 48px;
+  min-height: 48px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  position: relative;
+  z-index: 1102;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: var(--total-header);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1098;
+  opacity: 0;
+  transition: opacity var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-overlay.visible {
+  display: block;
+  opacity: 1;
+}
+
+body.nav-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 .nav-toggle span {
@@ -216,13 +249,15 @@ button, input, textarea, select {
   border-radius: 2px;
   transition: var(--transition);
   transform-origin: center;
-}
-
-body.nav-open {
-  overflow: hidden;
+  pointer-events: none;
 }
 
 .about-content h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+}
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--gray-900);
@@ -1405,9 +1440,18 @@ main {
     padding: 0 20px;
   }
 
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    order: 1;
+    flex: 1;
+  }
+
   .nav-toggle {
     display: flex;
-    z-index: 1002;
+    order: 2;
   }
 
   .nav-toggle.active span:nth-child(1) {
@@ -1423,34 +1467,45 @@ main {
     transform: translateY(-7px) rotate(-45deg);
   }
 
+  .nav-overlay.visible {
+    display: block;
+  }
+
   .nav {
+    order: 3;
     position: fixed;
     top: var(--total-header);
     left: 0;
     right: 0;
     bottom: 0;
+    height: calc(100dvh - var(--total-header));
+    height: calc(100vh - var(--total-header));
     background: var(--white);
     flex-direction: column;
     padding: 20px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
     gap: 6px;
     border-bottom: 1px solid var(--gray-200);
     box-shadow: var(--shadow);
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform var(--transition), opacity var(--transition);
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.3s ease, visibility 0.3s;
     pointer-events: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    z-index: 999;
+    z-index: 1100;
+    will-change: transform;
   }
 
   .nav.open {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: all;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
   }
 
   .nav-link {
+    -webkit-tap-highlight-color: rgba(114, 47, 55, 0.1);
+    touch-action: manipulation;
     width: 100%;
     text-align: left;
     padding: 14px 16px;

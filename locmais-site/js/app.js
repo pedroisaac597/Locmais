@@ -219,27 +219,48 @@ function getScrollOffset() {
 function setNavOpen(open) {
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
+  const overlay = document.getElementById('navOverlay');
   if (!nav || !navToggle) return;
+
+  if (open && !document.body.classList.contains('nav-open')) {
+    document.body.dataset.scrollY = String(window.scrollY);
+  }
+
   nav.classList.toggle('open', open);
   navToggle.classList.toggle('active', open);
-  navToggle.setAttribute('aria-expanded', open);
+  overlay?.classList.toggle('visible', open);
+  overlay?.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   document.body.classList.toggle('nav-open', open);
+
+  if (open) {
+    document.body.style.top = `-${document.body.dataset.scrollY || 0}px`;
+  } else {
+    const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
+  }
 }
 
 function initNav() {
   const navToggle = document.getElementById('navToggle');
   const nav = document.getElementById('nav');
+  const overlay = document.getElementById('navOverlay');
   const header = document.getElementById('header');
 
-  navToggle?.addEventListener('click', () => {
+  const toggleMenu = () => {
     setNavOpen(!nav.classList.contains('open'));
-  });
+  };
+
+  navToggle?.addEventListener('click', toggleMenu);
+  overlay?.addEventListener('click', () => setNavOpen(false));
 
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
-      if (href.length <= 1) return;
+      if (!href || href.length <= 1) return;
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
