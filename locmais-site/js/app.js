@@ -222,7 +222,7 @@ function setNavOpen(open) {
   const overlay = document.getElementById('navOverlay');
   if (!nav || !navToggle) return;
 
-  if (open && !document.body.classList.contains('nav-open')) {
+  if (open) {
     document.body.dataset.scrollY = String(window.scrollY);
   }
 
@@ -230,18 +230,20 @@ function setNavOpen(open) {
   navToggle.classList.toggle('active', open);
   overlay?.classList.toggle('visible', open);
   overlay?.setAttribute('aria-hidden', open ? 'false' : 'true');
-
   navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   document.body.classList.toggle('nav-open', open);
 
-  if (open) {
-    document.body.style.top = `-${document.body.dataset.scrollY || 0}px`;
-  } else {
+  if (!open) {
     const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
-    document.body.style.top = '';
-    window.scrollTo(0, scrollY);
+    requestAnimationFrame(() => window.scrollTo(0, scrollY));
   }
+}
+
+function scrollToSection(target) {
+  if (!target) return;
+  const top = target.getBoundingClientRect().top + window.scrollY - getScrollOffset();
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
 }
 
 function initNav() {
@@ -250,14 +252,33 @@ function initNav() {
   const overlay = document.getElementById('navOverlay');
   const header = document.getElementById('header');
 
-  const toggleMenu = () => {
+  navToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
     setNavOpen(!nav.classList.contains('open'));
-  };
+  });
 
-  navToggle?.addEventListener('click', toggleMenu);
   overlay?.addEventListener('click', () => setNavOpen(false));
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  nav?.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || href.length <= 1) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+      const wasOpen = nav.classList.contains('open');
+      setNavOpen(false);
+
+      if (wasOpen) {
+        setTimeout(() => scrollToSection(target), 50);
+      } else {
+        scrollToSection(target);
+      }
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]:not(.nav-link)').forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
       if (!href || href.length <= 1) return;
@@ -265,8 +286,7 @@ function initNav() {
       if (target) {
         e.preventDefault();
         setNavOpen(false);
-        const top = target.getBoundingClientRect().top + window.scrollY - getScrollOffset();
-        window.scrollTo({ top, behavior: 'smooth' });
+        scrollToSection(target);
       }
     });
   });
