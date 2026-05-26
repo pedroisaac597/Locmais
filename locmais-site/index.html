@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="LOCMAIS - Locacao de andaimes tubulares e fachadeiros com seguranca e qualidade">
+  <title>LOCMAIS | Locacao de Andaimes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <a href="#" id="topBarPhone" class="top-bar-link"></a>
+      <a href="#" id="topBarEmail" class="top-bar-link"></a>
+      <a href="#contato" class="top-bar-cta">Solicitar Orcamento</a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">
+        <img src="assets/logo.png" alt="LOCMAIS - Aluguel de Equipamentos" class="logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="#home" class="nav-link" data-section="home">Inicio</a>
+        <a href="#servicos" class="nav-link" data-section="servicos">Servicos</a>
+        <a href="#sobre" class="nav-link" data-section="sobre">Sobre</a>
+        <a href="#videos" class="nav-link" data-section="videos">Videos</a>
+        <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+        <a href="#contato" class="nav-link nav-cta" data-section="contato">Orcamento</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO ù barra superior do F -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="hero-badge" id="heroBadge"></span>
+          <h1>Seguranca e qualidade para a sua <span>obra</span></h1>
+          <p>A LOCMAIS e especializada em locacao de andaimes tubulares e fachadeiros, com equipamentos certificados, entrega rapida e suporte tecnico especializado.</p>
+          <div class="hero-buttons">
+            <a href="#contato" class="btn btn-primary">Solicitar Orcamento</a>
+            <a href="#servicos" class="btn btn-outline">Ver Servicos</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay">
+          <div class="hero-card">
+            <div class="hero-card-icon" id="heroCardIcon"></div>
+            <h3>Andaimes Tubulares & Fachadeiros</h3>
+            <p>Locacao completa com entrega, montagem e retirada no local da obra.</p>
+            <ul class="hero-checklist">
+              <li>Equipamentos certificados</li>
+              <li>Equipe NR-35</li>
+              <li>Atendimento em 24h</li>
+            </ul>
+            <a href="#contato" class="btn btn-primary btn-sm">Pedir orcamento agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICOS ù segunda barra horizontal do F -->
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="section-header section-header-left reveal">
+          <span class="section-tag">Nossos Servicos</span>
+          <h2>Especialistas em andaimes tubulares e fachadeiros</h2>
+          <p>Locacao de andaimes para obras de todos os portes, com montagem, entrega e retirada.</p>
+        </div>
+        <div class="cards-grid cards-grid-3">
+          <div class="card reveal">
+            <div class="card-icon" data-icon="scaffold"></div>
+            <h3>Andaimes Tubulares</h3>
+            <p>Andaimes metalicos tubulares para fachadas, reformas e construcoes em geral. Montagem e desmontagem inclusas.</p>
+          </div>
+          <div class="card reveal reveal-delay">
+            <div class="card-icon" data-icon="wrench"></div>
+            <h3>Andaimes Fachadeiros</h3>
+            <p>Sistemas modulares fachadeiros para trabalhos em altura com maxima seguranca e estabilidade.</p>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <div class="card-icon" data-icon="truck"></div>
+            <h3>Entrega e Montagem</h3>
+            <p>Logistica completa com entrega no local, montagem por equipe treinada e retirada apos a obra.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-bar">
+      <div class="container stats-grid">
+        <div class="stat-item reveal"><h3>15+</h3><p>Anos de experiencia</p></div>
+        <div class="stat-item reveal reveal-delay"><h3>500+</h3><p>Obras atendidas</p></div>
+        <div class="stat-item reveal reveal-delay-2"><h3>100%</h3><p>Equipamentos certificados</p></div>
+        <div class="stat-item reveal reveal-delay-3"><h3>24h</h3><p>Atendimento emergencial</p></div>
+      </div>
+    </section>
+
+    <!-- SOBRE ù haste vertical do F + conteudo -->
+    <section id="sobre" class="section section-gray">
+      <div class="container f-layout">
+        <div class="f-sidebar reveal">
+          <span class="section-tag">Sobre Nos</span>
+          <h2>Conheca a LOCMAIS</h2>
+          <p class="f-sidebar-text">Referencia em locacao de andaimes tubulares e fachadeiros em Brasilia e regiao.</p>
+          <nav class="f-sidebar-nav">
+            <a href="#sobre-historia">Nossa Historia</a>
+            <a href="#sobre-valores">Missao e Valores</a>
+            <a href="#sobre-diferenciais">Diferenciais</a>
+          </nav>
+        </div>
+        <div class="f-content">
+          <div id="sobre-historia" class="f-block reveal">
+            <div class="about-grid">
+              <div class="about-image">
+                <div class="about-image-placeholder">
+                  <span class="icon icon-xl icon-light" data-icon="scaffold"></span>
+                  <p>LOCMAIS ù Desde 2010</p>
+                </div>
+              </div>
+              <div class="about-content">
+                <h3>Nossa Historia</h3>
+                <p>A LOCMAIS nasceu da paixao por construir com seguranca. Fundada em 2010, comecamos como uma pequena empresa familiar e hoje somos referencia em locacao de andaimes tubulares e fachadeiros em Brasilia.</p>
+                <p>Ao longo de mais de 15 anos, atendemos centenas de obras ù desde pequenas reformas residenciais ate grandes empreendimentos comerciais.</p>
+              </div>
+            </div>
+          </div>
+          <div id="sobre-valores" class="f-block reveal">
+            <h3 class="f-block-title">Missao, Visao e Valores</h3>
+            <div class="about-values">
+              <div class="value-card">
+                <div class="value-icon" data-icon="target"></div>
+                <h4>Missao</h4>
+                <p>Prover solucoes seguras em locacao de andaimes tubulares e fachadeiros.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon" data-icon="eye"></div>
+                <h4>Visao</h4>
+                <p>Ser referencia em locacao de andaimes, reconhecida pela excelencia e seguranca.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon" data-icon="diamond"></div>
+                <h4>Valores</h4>
+                <p>Seguranca, qualidade, pontualidade, transparencia e respeito ao cliente.</p>
+              </div>
+            </div>
+          </div>
+          <div id="sobre-diferenciais" class="f-block reveal">
+            <h3 class="f-block-title">Por que escolher a LOCMAIS?</h3>
+            <div class="cards-grid">
+              <div class="card card-compact">
+                <div class="card-icon" data-icon="check"></div>
+                <h3>Equipamentos Certificados</h3>
+                <p>Inspecao rigorosa antes de cada locacao.</p>
+              </div>
+              <div class="card card-compact">
+                <div class="card-icon" data-icon="zap"></div>
+                <h3>Agilidade na Entrega</h3>
+                <p>Entrega em ate 24 horas para obras urgentes.</p>
+              </div>
+              <div class="card card-compact">
+                <div class="card-icon" data-icon="hardHat"></div>
+                <h3>Equipe Especializada</h3>
+                <p>Montadores certificados em NR-35.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="section">
+      <div class="container">
+        <div class="section-header section-header-left reveal">
+          <span class="section-tag">Videos</span>
+          <h2>Divulgacao e cases de obras</h2>
+          <p>Assista aos nossos videos de divulgacao, tutoriais de seguranca e obras realizadas.</p>
+        </div>
+        <div class="videos-grid" id="videosGrid"></div>
+      </div>
+    </section>
+
+    <!-- BLOG ù layout F com sidebar -->
+    <section id="blog" class="section section-gray">
+      <div class="container">
+        <div class="section-header section-header-left reveal">
+          <span class="section-tag">Blog & Opinioes</span>
+          <h2>O que nossos clientes dizem</h2>
+          <p>Compartilhe sua experiencia e veja avaliacoes de quem ja contratou a LOCMAIS.</p>
+        </div>
+        <div class="blog-layout">
+          <div class="blog-posts" id="blogPosts"></div>
+          <aside class="blog-form-card reveal">
+            <h3>Deixe sua opiniao</h3>
+            <p>Sua avaliacao ajuda outros clientes e nos permite melhorar continuamente.</p>
+            <div class="form-success" id="blogSuccess">
+              <span data-icon="checkCircle" class="icon-success-inline"></span>
+              Obrigado! Sua opiniao foi publicada com sucesso.
+            </div>
+            <form id="blogForm">
+              <div class="form-group">
+                <label for="blogName">Seu nome</label>
+                <input type="text" id="blogName" placeholder="Ex: Joao Silva" required>
+              </div>
+              <div class="form-group">
+                <label for="blogCompany">Empresa / Obra (opcional)</label>
+                <input type="text" id="blogCompany" placeholder="Ex: Construtora ABC">
+              </div>
+              <div class="form-group">
+                <label>Avaliacao</label>
+                <div class="star-rating">
+                  <input type="radio" name="rating" value="5" id="star5" required>
+                  <label for="star5" title="5 estrelas"></label>
+                  <input type="radio" name="rating" value="4" id="star4">
+                  <label for="star4" title="4 estrelas"></label>
+                  <input type="radio" name="rating" value="3" id="star3">
+                  <label for="star3" title="3 estrelas"></label>
+                  <input type="radio" name="rating" value="2" id="star2">
+                  <label for="star2" title="2 estrelas"></label>
+                  <input type="radio" name="rating" value="1" id="star1">
+                  <label for="star1" title="1 estrela"></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="blogMessage">Sua opiniao</label>
+                <textarea id="blogMessage" placeholder="Conte como foi sua experiencia..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%">Publicar opiniao</button>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / ORCAMENTO -->
+    <section id="contato" class="section section-contact">
+      <div class="container">
+        <div class="section-header section-header-left reveal">
+          <span class="section-tag">Orcamento</span>
+          <h2>Solicite um orcamento gratuito</h2>
+          <p>Preencha o formulario e voce sera direcionado para o WhatsApp da nossa equipe comercial.</p>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <h3>Fale Conosco</h3>
+            <div class="contact-item">
+              <div class="contact-item-icon" data-icon="phone"></div>
+              <div>
+                <h4>Telefone / WhatsApp</h4>
+                <p><a href="#" id="contactPhoneLink"></a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" data-icon="mail"></div>
+              <div>
+                <h4>E-mail</h4>
+                <p><a href="#" id="contactEmailLink"></a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" data-icon="mapPin"></div>
+              <div>
+                <h4>Localizacao</h4>
+                <p id="contactAddress"></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" data-icon="clock"></div>
+              <div>
+                <h4>Horario de Atendimento</h4>
+                <p>Seg a Qui: 7h as 17h<br>Sex: 7h as 16h</p>
+              </div>
+            </div>
+            <div class="contact-note">
+              <span data-icon="whatsapp" class="icon-whatsapp-note"></span>
+              <p><strong>Como funciona?</strong> Ao enviar, voce sera redirecionado para o WhatsApp da LOCMAIS com todos os dados preenchidos.</p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <div class="form-success" id="contactSuccess">
+              <span data-icon="checkCircle" class="icon-success-inline"></span>
+              Redirecionando para o WhatsApp da LOCMAIS...
+            </div>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="contactName">Nome completo</label>
+                <input type="text" id="contactName" required placeholder="Seu nome">
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Telefone</label>
+                <input type="tel" id="contactPhone" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">E-mail</label>
+                <input type="email" id="contactEmail" required placeholder="seu@email.com">
+              </div>
+              <div class="form-group">
+                <label for="contactService">Tipo de andaime</label>
+                <select id="contactService" required>
+                  <option value="">Selecione...</option>
+                  <option value="tubular">Andaime Tubular</option>
+                  <option value="fachadeiro">Andaime Fachadeiro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Descreva sua necessidade</label>
+                <textarea id="contactMessage" required placeholder="Tipo de obra, altura, prazo..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-whatsapp" style="width:100%">
+                <span data-icon="whatsapp" class="icon-btn-inline"></span>
+                Enviar via WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <img src="assets/logo.png" alt="LOCMAIS" class="logo-img logo-img-footer">
+          </a>
+          <p>Locacao de andaimes tubulares e fachadeiros com seguranca, qualidade e agilidade para sua obra.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navegacao</h4>
+          <a href="#home">Inicio</a>
+          <a href="#servicos">Servicos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#videos">Videos</a>
+          <a href="#blog">Blog</a>
+          <a href="#contato">Orcamento</a>
+        </div>
+        <div class="footer-contact" id="footerContact"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LOCMAIS. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+      <button class="video-modal-close" id="videoModalClose" aria-label="Fechar video">&times;</button>
+      <iframe id="videoIframe" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+  </div>
+
+  <a href="#" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <span class="icon icon-whatsapp-float" aria-hidden="true"></span>
+    <span class="whatsapp-tooltip">Fale conosco</span>
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/blog.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
