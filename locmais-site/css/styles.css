@@ -468,7 +468,7 @@ main {
   padding: 80px 0;
 }
 
-/* Servicos ù logo marca d'agua no fundo */
+/* Servicos ÔøΩ logo marca d'agua no fundo */
 .section-servicos {
   position: relative;
   overflow: hidden;
@@ -1482,7 +1482,7 @@ main {
 
 /* ===== RESPONSIVE ===== */
 
-/* --- Tablet (atù 1024px) --- */
+/* --- Tablet (atÔøΩ 1024px) --- */
 @media (max-width: 1024px) {
   :root {
     --header-height: 76px;
@@ -1640,7 +1640,7 @@ main {
   }
 }
 
-/* --- Mobile (atù 768px) --- */
+/* --- Mobile (atÔøΩ 768px) --- */
 @media (max-width: 768px) {
   :root {
     --header-height: 68px;
@@ -1872,7 +1872,7 @@ main {
   }
 }
 
-/* --- Mobile pequeno (atù 480px) --- */
+/* --- Mobile pequeno (atÔøΩ 480px) --- */
 @media (max-width: 480px) {
   :root {
     --header-height: 60px;
@@ -1958,7 +1958,7 @@ main {
   }
 }
 
-/* --- Telas muito pequenas (atù 360px) --- */
+/* --- Telas muito pequenas (atÔøΩ 360px) --- */
 @media (max-width: 360px) {
   .top-bar-cta {
     display: none;

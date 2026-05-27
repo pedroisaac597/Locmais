@@ -1,14 +1,14 @@
 const videos = [
   {
     id: 'dQw4w9WgXcQ',
-    title: 'LOCMAIS — Apresentacao Institucional',
-    description: 'Conheca a LOCMAIS, nossa estrutura e compromisso com a seguranca.',
+    title: 'LOCMAIS — Apresentação Institucional',
+    description: 'Conheça a LOCMAIS, nossa estrutura e compromisso com a segurança.',
     thumb: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg'
   },
   {
     id: 'ysz5S6PUM-U',
-    title: 'Montagem de Andaimes — Tutorial de Seguranca',
-    description: 'Boas praticas na montagem e uso seguro de andaimes.',
+    title: 'Montagem de Andaimes — Tutorial de Segurança',
+    description: 'Boas práticas na montagem e uso seguro de andaimes.',
     thumb: 'https://img.youtube.com/vi/ysz5S6PUM-U/maxresdefault.jpg'
   },
   {
@@ -20,19 +20,19 @@ const videos = [
   {
     id: 'jNQXAC9IVRw',
     title: 'Equipamentos Certificados INMETRO',
-    description: 'Por que a certificacao dos equipamentos e fundamental.',
+    description: 'Por que a certificação dos equipamentos é fundamental.',
     thumb: 'https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg'
   },
   {
     id: '9bZkp7q19f0',
-    title: 'Entrega Rapida — Logistica LOCMAIS',
-    description: 'Entrega agil e montagem profissional no local.',
+    title: 'Entrega Rápida — Logística LOCMAIS',
+    description: 'Entrega ágil e montagem profissional no local.',
     thumb: 'https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg'
   },
   {
     id: 'L_jWHffIx5E',
     title: 'Depoimento de Cliente',
-    description: 'Experiencia de quem ja contratou a LOCMAIS.',
+    description: 'Experiência de quem já contratou a LOCMAIS.',
     thumb: 'https://img.youtube.com/vi/L_jWHffIx5E/maxresdefault.jpg'
   }
 ];
@@ -165,7 +165,7 @@ function initFooterContact() {
 function initHeroBadge() {
   const badge = document.getElementById('heroBadge');
   const cardIcon = document.getElementById('heroCardIcon');
-  if (badge) badge.innerHTML = `${icon('scaffold', 'icon-sm')} Locacao de Andaimes Tubulares e Fachadeiros`;
+  if (badge) badge.innerHTML = `${icon('scaffold', 'icon-sm')} Locação de Andaimes Tubulares e Fachadeiros`;
   if (cardIcon) cardIcon.innerHTML = icon('scaffold');
 }
 

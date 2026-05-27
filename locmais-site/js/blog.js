@@ -70,7 +70,7 @@ function renderBlogPosts(containerId, limit = null) {
     container.innerHTML = `
       <div class="empty-state">
         <span class="icon icon-xl">${ICONS.message}</span>
-        <p>Nenhuma opiniao ainda. Seja o primeiro a compartilhar!</p>
+        <p>Nenhuma opinião ainda. Seja o primeiro a compartilhar!</p>
       </div>
     `;
     return;

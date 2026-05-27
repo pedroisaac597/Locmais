@@ -2,8 +2,8 @@ const CONFIG = {
   whatsapp: '5561998331785',
   whatsappDisplay: '(61) 99833-1785',
   email: 'locmais2021@gmail.com',
-  address: 'Brasilia, DF',
-  whatsappDefaultMessage: 'Ola! Gostaria de solicitar um orcamento de andaimes com a LOCMAIS.'
+  address: 'Brasília, DF',
+  whatsappDefaultMessage: 'Olá! Gostaria de solicitar um orçamento de andaimes com a LOCMAIS.'
 };
 
 function getWhatsAppLink(message) {
@@ -17,14 +17,14 @@ function buildOrcamentoMessage(data) {
   };
 
   return [
-    '*Solicitacao de Orcamento - LOCMAIS*',
+    '*Solicitação de Orçamento - LOCMAIS*',
     '',
     `*Nome:* ${data.name}`,
     `*Telefone:* ${data.phone}`,
     `*E-mail:* ${data.email}`,
-    `*Servico:* ${serviceLabels[data.service] || data.service}`,
+    `*Serviço:* ${serviceLabels[data.service] || data.service}`,
     '',
-    '*Descricao da necessidade:*',
+    '*Descrição da necessidade:*',
     data.message
   ].join('\n');
 }
