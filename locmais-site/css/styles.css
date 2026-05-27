@@ -227,16 +227,19 @@ button, input, textarea, select {
   inset: 0;
   top: var(--total-header);
   background: rgba(0, 0, 0, 0.45);
-  z-index: 998;
+  z-index: 1090;
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transition: opacity var(--transition);
-  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
 }
 
 .nav-overlay.visible {
   display: block;
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 body.nav-open {
@@ -246,6 +249,62 @@ body.nav-open {
 
 body.nav-open .header {
   z-index: 1100;
+}
+
+/* Desktop — menu horizontal sempre visível */
+@media (min-width: 1025px) {
+  .nav-toggle {
+    display: none !important;
+  }
+
+  .nav-overlay {
+    display: none !important;
+  }
+
+  .nav {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    height: auto;
+    width: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    overflow: visible;
+    order: unset;
+  }
+
+  .nav-link {
+    width: auto;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+
+  .nav-cta {
+    margin-left: 8px;
+    margin-top: 0;
+  }
+
+  body.nav-open {
+    overflow: auto;
+    height: auto;
+  }
+
+  .header {
+    position: fixed;
+    z-index: 1101;
+  }
+
+  .nav-link {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
 }
 
 .nav-toggle span {
@@ -259,11 +318,6 @@ body.nav-open .header {
 }
 
 .about-content h3 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--gray-900);
-  margin-bottom: 16px;
-}
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--gray-900);
@@ -1521,6 +1575,7 @@ main {
 
   .nav-overlay.visible {
     display: block;
+    z-index: 1090;
   }
 
   .nav {
@@ -1545,7 +1600,7 @@ main {
     pointer-events: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    z-index: 2;
+    z-index: 1100;
     will-change: transform;
   }
 
